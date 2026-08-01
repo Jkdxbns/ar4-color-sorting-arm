@@ -3,11 +3,18 @@
 <package format="3">
   <name>ar4_robot_arm_description</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="sahilp1424@gmail.com">smpate111</maintainer>
+  <description>Description package to define Annin Robotics robotic arm.</description>
+  <maintainer email="sahilp7035@gmail.com">smpate111</maintainer>
   <license>Apache-2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>joint_state_publisher</depend>
+  <depend>joint_state_publisher_gui</depend>
+  <depend>robot_state_publisher</depend>
+  <depend>rviz</depend>
+  <depend>urdf</depend>
+  <depend>xacro</depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
