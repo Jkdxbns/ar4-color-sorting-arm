@@ -33,7 +33,6 @@ def generate_launch_description():
     default_urdf_model_path = os.path.join(pkg_share,
                                            'urdf/ar4_robot_arm.urdf')
 
-    # YOU DO NOT NEED TO CHANGE ANYTHING BELOW THIS LINE ############
     # Launch configuration variables specific to simulation
     gui = LaunchConfiguration('gui')
     urdf_model = LaunchConfiguration('urdf_model')
