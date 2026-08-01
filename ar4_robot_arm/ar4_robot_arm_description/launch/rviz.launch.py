@@ -1,7 +1,7 @@
 """
-ss.
+This is the launch file for the AR4 arm RViz visualization.
 
-ss
+The following are libraries used to create the AR4 arm RViz launch file.
 """
 import os
 
@@ -13,7 +13,8 @@ from launch.substitutions import Command, LaunchConfiguration
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 
-"""_summary_.
+"""
+The following function generates the launch description for the AR4 arm.
 """
 
 
