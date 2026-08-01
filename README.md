@@ -1,34 +1,33 @@
-# 6DOF Robot Arm - Color Box Segregation
+# AR4 Robot Arm
+This is the ROS 2 project folder of the AR4 Robot Arm.
 
-A 6-DOF robotic arm that detects colored boxes and sorts them into matching bins. The
-arm is designed in CAD, simulated in Gazebo, motion-planned with MoveIt 2, and driven by
-a camera (RGB-D with color detection), then moved into Isaac Sim for a learned policy.
-Simulation only.
+To install each packages' dependencies, execute the following commands in your ROS 2 workspace directory:
+```
+rosdep update
+rosdep install --from-paths src -y --ignore-src
+```
 
-## Task
+This project was tested using ROS 2 Jazzy and Ubuntu 24.04. Store the project folder in the `src` directory of your ROS 2 workspace directory, and include the following in your `~/.bashrc` file:
+```
+source /opt/ros/jazzy/setup.bash
+export LIBGL_ALWAYS_SOFTWARE=1
+export QT_QPA_PLATFORM=xcb
+source ~/{your ROS 2 workspace name}/install/setup.bash
+export GZ_IP=127.0.0.1
+export GZ_SIM_RESOURCE_PATH=$GZ_SIM_RESOURCE_PATH:/home/{username}/{your ROS 2 workspace name}/install/ar4_robot_arm/share
+```
 
-Sort 42 boxes (5x5x5 cm, six colors: Red, Blue, Green, Black, White, Light Blue) from
-one base bin into six colored bins. AR4-based arm, two-finger gripper, wrist-mounted
-RGB-D camera.
+Then build the packages while you are in your ROS 2 workspace directory:
+```
+colcon build --packages-select ar4_robot_arm_description ar4_robot_arm_driver ar4_robot_arm_gazebo
+```
 
-## Stack
+To open the AR4 arm in RViz, execute this command:
+```
+ros2 launch ar4_robot_arm_description rviz.launch.py
+```
 
-- CAD: SolidWorks + Fusion 360, exported to URDF with sw2urdf
-- Middleware: ROS 2 Jazzy
-- Simulation: Gazebo, then Isaac Sim
-- Motion planning: MoveIt 2
-- Perception: RGB-D with HSV/YOLO color detection and IK
-
-## Contents
-
-- CAD - arm design files (native and shared STEP)
-
-## CAD exchange format
-
-STEP (.step / .stp) is the shared format between SolidWorks and Fusion 360. Native files
-(.SLDPRT, .SLDASM, .f3d) are kept alongside.
-
-## Repository workflow
-
-CAD files use Git LFS, so run `git lfs install` after cloning. Branch from main as
-feature/<name>, open a pull request, and merge after review.
+To open the AR4 arm in Gazebo, execute this command:
+```
+ros2 launch ar4_robot_arm_gazebo gazebo.launch.py
+```
