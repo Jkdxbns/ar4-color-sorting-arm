@@ -26,3 +26,8 @@ To open the AR4 arm in RViz, execute this command:
 ```
 ros2 launch ar4_robot_arm_description rviz.launch.py
 ```
+
+To open the AR4 arm in Gazebo, execute this command:
+```
+ros2 launch ar4_robot_arm_gazebo gazebo.launch.py
+```
