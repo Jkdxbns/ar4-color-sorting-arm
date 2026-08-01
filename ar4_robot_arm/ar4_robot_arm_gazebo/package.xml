@@ -3,14 +3,27 @@
 <package format="3">
   <name>ar4_robot_arm_gazebo</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="sahilp1424@gmail.com">smpate111</maintainer>
+  <description>Gazebo simulation package for AR4 robot arm.</description>
+  <maintainer email="sahilp7035@gmail.com">smpate111</maintainer>
   <license>Apache-2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
+
+  <depend>ar4_robot_arm_description</depend>
+  <depend>ar4_robot_arm_driver</depend>
+  <depend>controller_manager</depend>
+  <depend>gz_ros2_control</depend>
+  <depend>joint_state_publisher</depend>
+  <depend>joint_state_publisher_gui</depend>
+  <depend>robot_state_publisher</depend>
+  <depend>ros_gz_bridge</depend>
+  <depend>ros_gz_sim</depend>
+  <depend>rviz</depend>
+  <depend>urdf</depend>
+  <depend>xacro</depend>
 
   <export>
     <build_type>ament_cmake</build_type>

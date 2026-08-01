@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+
+<sdf version="1.6">
+    <world name="default">
+        <!-- Plugin for simulating physics. -->
+        <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics" />
+        
+        <!-- Plugin for handling user commands. -->
+        <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands" />
+
+        <!-- Plugin for broadcasting scene updates. -->
+        <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster" />
+
+        <!-- Adding Earth's gravity. -->
+        <gravity>0.0 0.0 -9.8</gravity>
+
+        <!-- Adding sun. -->
+        <include>
+            <uri>
+                https://fuel.gazebosim.org/1.0/OpenRobotics/models/Sun
+            </uri>
+        </include>
+
+        <!-- Adding ground plane. -->
+        <include>
+            <uri>
+                https://fuel.gazebosim.org/1.0/OpenRobotics/models/Ground Plane
+            </uri>
+        </include>
+
+        <!-- Define scene properties. -->
+        <scene>
+            <shadows>true</shadows>
+        </scene>
+    </world>
+</sdf>
