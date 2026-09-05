@@ -1,0 +1,31 @@
+# Controller configuration for the AR4 arm in Gazebo (gz_ros2_control).
+# Loaded by the gz plugin declared in ar4_robot_arm.control.urdf.
+#
+# Two controllers:
+#   joint_state_broadcaster    - reads joint positions/velocities and publishes /joint_states
+#   joint_trajectory_controller - drives the 6 joints to target positions over time
+
+controller_manager:
+  ros__parameters:
+    update_rate: 100  # Hz - how often the controllers tick
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    joint_trajectory_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+joint_trajectory_controller:
+  ros__parameters:
+    joints:
+      - joint_1
+      - joint_2
+      - joint_3
+      - joint_4
+      - joint_5
+      - joint_6
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
