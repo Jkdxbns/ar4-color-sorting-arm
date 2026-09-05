@@ -1,0 +1,2 @@
+# ar4_robot_arm_description
+This ROS2 package contains the decription for the AR4 Robot Arm. The URDF was modified from the original versions to fix the joint rotation directions, specify revolute joints, incorporate ros2_control, and use Gazebo plugins.

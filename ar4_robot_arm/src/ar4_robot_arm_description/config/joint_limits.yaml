@@ -1,0 +1,13 @@
+j1_limit_min: !degrees 0
+j2_limit_min: !degrees -45
+j3_limit_min: !degrees -45
+j4_limit_min: !degrees 0
+j5_limit_min: !degrees -195
+j6_limit_min: !degrees 0
+
+j1_limit_max: !degrees 360
+j2_limit_max: !degrees 90
+j3_limit_max: !degrees 90
+j4_limit_max: !degrees 360
+j5_limit_max: !degrees 15
+j6_limit_max: !degrees 360
